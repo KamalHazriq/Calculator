@@ -1,0 +1,275 @@
+/* Attribution Styles */
+.attribution { 
+    font-size: 12px; 
+    text-align: center; 
+    margin-top: 20px;
+}
+.attribution a {
+    color: hsl(78, 100%, 58%); 
+}
+
+/* General Body Styles */
+body {
+    background-color: hsla(224, 26%, 31%, 1);
+    color: hsla(224, 26%, 100%, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    font-family: 'Tahoma', sans-serif;
+    font-weight: 600;
+    max-width: 420px;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.theme h3 {
+    font-size: 10px;
+}
+
+.theme {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.theme-selector {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px; /* Adds some space between theme label and slider */
+}
+
+.theme-selector input[type="radio"] {
+    position: absolute; /* Ensure radio buttons are positioned correctly */
+    opacity: 0; /* Hide radio buttons */
+    width: 0;
+    height: 0;
+}
+
+.theme-selector .slider {
+    position: relative;
+    width: 60px;
+    margin-right: 10px;
+    height: 25px;
+    background-color: hsla(224, 35%, 15%, 0.6);
+    border-radius: 15px;
+    cursor: pointer; /* Change cursor to pointer to indicate it is clickable */
+}
+
+.theme-selector .slider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5px; /* Default position for theme 1 */
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: white; /* Default color for the slider knob */
+    border-radius: 50%;
+    transition: left 0.3s ease;
+}
+
+/* Positioning for different themes */
+body.theme1 .slider::before {
+    left: 5px; /* Positioning for theme 1 */
+}
+body.theme2 .slider::before {
+    left: calc(50% - 7.5px); /* Positioning for theme 2 */
+}
+body.theme3 .slider::before {
+    left: calc(100% - 20px); /* Positioning for theme 3 */
+}
+
+#display {
+    width: 100%;
+    height: 100px;
+    border: none;
+    background-color: hsla(224, 35%, 15%, 1);
+    color: hsla(224, 26%, 100%, 1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 1vh;
+    font-size: 40px;
+    font-weight: 750;
+    overflow: hidden;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.buttons {
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Ensures both horizontal and vertical gaps */
+    width: 100%;
+    background-color: hsla(225, 30%, 21%, 1);
+    border: none;
+    border-radius: 10px;
+    margin: 1vh;
+    box-sizing: border-box;
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Tahoma', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    background-color: hsla(225, 30%, 100%, 1);
+    max-width: 80px;
+    height: 60px; /* Allow height to adjust automatically */
+    padding: 20px 0; /* Padding to adjust size */
+    color: hsla(225, 30%, 21%, 0.8);
+    box-shadow: 0px 3px 0px 0px rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    filter: brightness(150%);
+}
+
+.del, .reset {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: hsla(224, 21%, 50%, 1);
+}
+
+.del:hover, .reset:hover {
+    background-color: hsla(224, 21%, 55%, 1);
+}
+
+.del:active, .reset:active {
+    background-color: hsla(224, 21%, 65%, 1);
+}
+
+.equals {
+    color: white;
+    font-size: 18px;
+    background-color: hsla(6, 64%, 50%, 1);
+}
+
+.equals, .reset {
+    max-width: 100%;
+    grid-column: span 2;
+}
+
+.equals:hover {
+    filter: brightness(200%);
+}
+
+.equals:active {
+    background-color: hsla(6, 64%, 65%, 1);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .calculator {
+        min-width: 70%; /* Slightly reduce minimum width */
+        box-sizing: border-box;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 15px 10px; /* Adjusted gap for smaller screens */
+    }
+
+    .btn {
+        min-width: 50px;
+        max-height: 75px;
+        width: calc((100% - 15px)); /* Adjust width to maintain square aspect ratio */
+        height: calc((100%)); /* Ensure height matches width for square shape */
+    }
+
+    .equals, .reset {
+        grid-column: span 2;
+    }
+}
+
+/* Default Theme (Theme 1) */
+body.theme1 {
+    background-color: hsla(224, 26%, 31%, 1);
+    color: hsla(224, 26%, 100%, 1);
+}
+.calculator.theme1 .buttons {
+    background-color: hsla(225, 30%, 21%, 1);
+}
+.calculator.theme1 .btn {
+    background-color: hsla(225, 30%, 100%, 1);
+    color: hsla(225, 30%, 21%, 0.8);
+}
+.calculator.theme1 .btn.del, .calculator.theme1 .btn.reset {
+    background-color: hsla(224, 21%, 50%, 1);
+    color: white;
+}
+.calculator.theme1 .btn.equals {
+    background-color: hsla(6, 64%, 50%, 1);
+    color: white;
+}
+
+/* Theme 2 */
+body.theme2 {
+    background-color: hsla(0, 0%, 90%, 1);
+    color: hsla(53, 9%, 20%, 1);
+}
+
+.calculator.theme2 .buttons {
+    background-color: hsla(12, 5%, 81%, 1);
+}
+.calculator.theme2 .btn {
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 20%);
+    box-shadow: 0px 3px 0px 0px rgba(133, 133, 133, 0.8);
+}
+.calculator.theme2 .btn.del, .calculator.theme2 .btn.reset {
+    background-color: hsla(185, 41%, 37%, 1);
+    color: white;
+}
+.calculator.theme2 .btn.equals {
+    background-color: hsl(0, 50%, 50%);
+    color: white;
+}
+
+/* Theme 3 */
+body.theme3 {
+    background-color: hsla(268, 75%, 9%, 1);
+    color: hsla(51, 99%, 63%, 1);
+}
+.calculator.theme3 .buttons {
+    background-color:hsla(269, 74%, 12%, 1) ;
+}
+.calculator.theme3 .btn {
+    background-color: hsla(269, 48%, 20%, 1);
+    color: hsla(51, 99%, 63%, 1);
+    box-shadow: 0px 3px 0px 0px hsla(284, 79%, 21%, 1);
+}
+.calculator.theme3 .btn.del, .calculator.theme3 .btn.reset {
+    background-color: hsla(281, 89%, 26%, 1);
+    color: white;
+}
+.calculator.theme3 .btn.equals {
+    background-color: hsla(176, 100%, 44%, 1);
+    color: rgb(0, 0, 0);
+}

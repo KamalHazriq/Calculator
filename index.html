@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KamalHazriq | Calculator app</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="/images/favicon-32x32.png">
+  
+</head>
+<body class="theme1">
+  <div class="calculator theme1">
+    <div class="title-container">
+      <span class="title">Calculator by Kamal Hazriq</span>
+      <div class="theme">
+        <h3>Theme</h3>
+        <div class="theme-selector">
+          <div class="slider"></div>
+        </div>
+      </div>
+    </div>
+    
+    <input type="text" id="display" readonly value="0">
+    <div class="buttons">
+      <button class="btn" onclick="addToDisplay('7')">7</button>
+      <button class="btn" onclick="addToDisplay('8')">8</button>
+      <button class="btn" onclick="addToDisplay('9')">9</button>
+      <button class="btn del" onclick="delDisplay()">DEL</button>
+      <button class="btn" onclick="addToDisplay('4')">4</button>
+      <button class="btn" onclick="addToDisplay('5')">5</button>
+      <button class="btn" onclick="addToDisplay('6')">6</button>
+      <button class="btn operator" onclick="addToDisplay('+')">+</button>
+      <button class="btn" onclick="addToDisplay('1')">1</button>
+      <button class="btn" onclick="addToDisplay('2')">2</button>
+      <button class="btn" onclick="addToDisplay('3')">3</button>
+      <button class="btn operator" onclick="addToDisplay('-')">-</button>
+      <button class="btn" onclick="addToDisplay('.')">.</button>
+      <button class="btn" onclick="addToDisplay('0')">0</button>
+      <button class="btn operator" onclick="addToDisplay('/')">/</button>
+      <button class="btn operator" onclick="addToDisplay('*')">X</button>
+      <button class="btn reset" onclick="clearDisplay()">RESET</button>
+      <button class="btn equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Kamal Hazriq</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
